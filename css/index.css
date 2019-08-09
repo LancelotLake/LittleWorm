@@ -1,0 +1,242 @@
+
+.typing-wrap {
+    position: relative;
+    min-height: 105px;
+
+}
+
+.typed {
+    display: inline;
+    white-space: pre-wrap;
+    line-height: 30px;
+    margin-bottom: .75em;
+}
+
+.typed-cursor {
+    animation: typedCursor  .8s infinite;
+    -webkit-animation: typedCursor .8s infinite;
+    display: inline;
+    opacity: 1;
+}
+
+@keyframes typedCursor {
+    0% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.content .h1 {
+    letter-spacing: .01em;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 700;
+    color: #2bbc8a;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+section  ul {
+    margin: 16px 0;
+    line-height: 1.725;
+    padding: 0;
+    font-size: 16px;
+}
+
+.notes-list .note-item {
+    margin-bottom: 5px;
+    margin-left: 0;
+    display: flex;
+}
+
+.notes-list .note-item .time {
+    display: block;
+    color: #666;
+    min-width: 100px;
+    margin-right: 16px;
+    text-align: left;
+}
+.others-list .other-item a,
+.notes-list .note-item a{
+    text-decoration: none;
+    color: #c9cacc;
+    word-wrap: break-word;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 100% 6px;
+    background-image: linear-gradient(transparent,transparent 5px,#c9cacc 5px,#c9cacc);
+}
+
+.others-list .other-item a:hover,
+.notes-list .note-item a:hover {
+    color: #2bbc8a;
+    background-image: linear-gradient(transparent,transparent 5px,#2bbc8a 5px,#2bbc8a);
+}
+
+.others-list .other-item p{
+    display: inline;
+    margin-left: 5px;
+}
+.card .hhh {
+    background-image: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
+    border-radius: 40px;
+    display: flex;
+    min-height: 100px;
+    border: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 16px 0;
+}
+
+.card input {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+:root {
+    --gray: #969696;
+    --green: #55f655;
+    --dur: 0.5s;
+}
+.switch, .switch:before, .switch:after {
+    display: block;
+}
+.switch:before, .switch:after, .handle {
+    position: absolute;
+}
+.switch, .switch:before {
+    box-shadow:
+            0 0.15em 0 #fff6 inset,
+            0 0.3em 0 #fff6 inset,
+            0.25em 0 0 #fff6 inset,
+            0 -0.25em 0 #fff6 inset,
+            0 0.5em 0 inset,
+            0.5em 0 0 inset,
+            0 -0.5em 0 inset,
+            0 0.75em 0 #0002 inset,
+            0 0.25em 0 #0002;
+}
+.switch:before, .switch:after {
+    content: "";
+}
+.switch {
+    border-radius: 2em 0 0 2em;
+    color: #969696;
+    cursor: pointer;
+    margin: auto;
+    position: relative;
+    width: 12em;
+    height: 4em;
+    transform: translateX(-2em);
+}
+.switch:before {
+    border-radius: 1.5em 0 0 1.5em;
+    top: 0.5em;
+    right: 0;
+    width: 8em;
+    height: 3em;
+}
+.switch:after {
+    border-radius: 0 1.75em 1.75em 0;
+    box-shadow:
+            0 0.15em 0 #fff6 inset,
+            0 0.3em 0 #fff6 inset,
+            -0.25em 0 0 #fff6 inset,
+            0 -0.25em 0 #fff6 inset,
+            0 0.5em 0 inset,
+            -0.5em 0 0 inset,
+            0 -0.5em 0 inset,
+            0 0.75em 0 #0002 inset,
+            0 0.25em 0 #0002;
+    left: 100%;
+    width: 4em;
+    height: 3.5em;
+}
+.handle {
+    animation: off var(--dur) linear;
+    background-color: var(--gray);
+    background-image:
+            radial-gradient(100% 100% at 65% 65%,#fff6 6.5%,#fff0 7%),
+            radial-gradient(200% 200% at 33% 33%,#fff 4.5%,#fff0 5% ,#0003 27%);
+    border-radius: 50%;
+    box-shadow:
+            0.1em 0.1em 0 #0002 inset,
+            -0.25em -0.25em 0 #fff3 inset,
+            0 0.5em 0 #0002;
+    top: -0.5em;
+    left: -0.5em;
+    width: 5em;
+    height: 5em;
+    z-index: 1;
+}
+.pristine .handle {
+    animation: none;
+}
+input:checked + .switch .handle {
+    animation: on var(--dur) linear forwards;
+}
+
+@keyframes on {
+    from {
+        transform: translate(0,0) scale(1,1);
+    }
+    10% {
+        transform: translate(1.25em,0) scale(1,1);
+    }
+    20% {
+        transform: translate(3.5em,0) scale(1.1,1.1);
+    }
+    70% {
+        transform: translate(10.5em,0) scale(1.1,1.1);
+    }
+    75% {
+        transform: translate(11em,-0.25em) scale(1,1);
+    }
+    80% {
+        transform: translate(12.5em,-0.25em) scale(1,1);
+    }
+    90% {
+        background-color: var(--gray);
+        transform: translate(11.5em,-0.25em) scale(1,1);
+    }
+    to {
+        background-color: var(--green);
+        transform: translate(12.25em,-0.25em) scale(1,1);
+    }
+}
+@keyframes off {
+    from {
+        background-color: var(--green);
+        transform: translate(12.25em,-0.25em) scale(1,1);
+    }
+    10% {
+        transform: translate(12.25em,0) scale(1,1);
+    }
+    20% {
+        transform: translate(11.5em,0) scale(1.1,1.1);
+    }
+    70% {
+        transform: translate(3.5em,0) scale(1.1,1.1);
+    }
+    75% {
+        transform: translate(1.25em,0) scale(1,1);
+    }
+    80% {
+        transform: translate(-0.5em,0) scale(1,1);
+    }
+    90% {
+        background-color: var(--green);
+        transform: translate(0.5em,0) scale(1,1);
+    }
+    to {
+        background-color: var(--gray);
+        transform: translate(0,0) scale(1,1);
+    }
+}

@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    transition: .2s;
+}
+
+body {
+    letter-spacing: .05rem;
+    color: #c9cacc;
+    background-color: #1d1f21;
+    font-size: 14px;
+    font-weight: 400;
+    text-rendering: geometricPrecision;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.725;
+    font-family: fontnameRegular;
+    /*font-family: Menlo,"Meslo LG","Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑",monospace;*/
+}
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    list-style: none;
+}
+
+.content {
+    width:100%;
+    max-width: 39rem;
+    flex: 1;
+    padding: 0 2rem;
+    margin: 4rem auto;
+}
+
+.header {
+    width: 100%;
+    max-width: 710px;
+    margin: 0 auto 3rem;
+
+}
+
+.header a {
+    background: 0 0;
+    color: inherit;
+}
+
+.header a .logo {
+    float: left;
+    margin-right: 20px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-image: url("../imgs/logo.jpg");
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    border-radius: 50%;
+}
+
+.header a .logo:hover {
+    -webkit-filter: none;
+    filter: none;
+}
+
+.header a h1 {
+    letter-spacing: .05em;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    color: #c9cacc;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.header nav {
+    font-style: normal;
+    font-weight: 200;
+;
+    font-size: .8rem;
+}
+
+.header nav ul {
+    line-height: 15px;
+    color: #2bbc8a;
+}
+
+.header nav ul li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    border-right: 1px dotted #2bbc8a;
+}
+
+.header nav ul li a {
+    margin-right: 15px;
+}
+
+.header nav ul li a:hover {
+    border-bottom: 1px solid #2bbc8a;
+}
+
+.footer {
+    font-size: 11px;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    vertical-align: top;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    color: #666;
+    /*letter-spacing: .05rem;*/
+}
+
+.footer .footer-left {
+    float: left;
+}
+
+.footer .footer-right {
+    float: right;
+}
+
+.footer .footer-right ul {
+    line-height: 15px;
+}
+
+.footer .footer-right ul li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-right: 1px dotted #666;
+}
+
+.footer .footer-right ul li a{
+    color: #666;
+    margin-right: 10px;
+}
+
+.footer .footer-right ul li a:hover {
+    color: #c9cacc;
+    border-bottom: 1px solid #c9cacc;
+}

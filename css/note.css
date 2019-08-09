@@ -1,0 +1,50 @@
+.title {
+    letter-spacing: .05em;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    color: #2bbc8a;
+    margin-top: -2rem;
+    display: block;
+    font-family: fontnameRegular;
+}
+
+.time{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    padding-right: 12px;
+    line-height: 1rem;
+    border-right: 1px dotted #c9cacc;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.text {
+    font-size: 1.1rem;
+}
+
+.note-header{
+    position: fixed;
+    right: 5rem;
+    top: 3rem;
+}
+
+.note-header ul {
+    display: inline-block;
+}
+
+.note-header ul li {
+    display: inline-block;
+}
+
+.note-header ul li a{
+    color: #2bbc8a;
+    border-right: 1px dotted #2bbc8a;
+    margin-right: 8px;
+    padding-right: 8px;
+    font-size: 0.8rem;
+}
+
+.note-header ul li a:hover {
+    border-bottom: 1px solid #2bbc8a;
+}

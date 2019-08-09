@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fonts/font.css">
+</head>
+<body id="app">
+    <div class="content" >
+        <header class="header">
+            <a href="#">
+                <div class="logo"></div>
+                <h1>MY muyue</h1>
+            </a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Archives</a></li>
+                    <li><a href="#">about</a></li>
+                    <li style="border: none"><a href="#" >Github</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="wrapper">
+            <section class="card">
+                <div class="typing-wrap">
+                    <span class="typed" id="typed" ></span>
+                    <span class="typed-cursor">|</span>
+                </div>
+                <div class="hhh">
+                    <input type="checkbox" id="toggle" style="display: none">
+                    <label class="switch pristine" for="toggle">
+                        <div class="handle"></div>
+                    </label>
+                </div>
+            </section>
+            <section class="notes" >
+                <div class="h1">Archives</div>
+                <ul class="notes-list" id="notes">
+                    <li class="note-item" v-for='note in noteList'>
+                        <div class="time">{{ note.time }}</div>
+                        <a v-on:click="navigator(note.name, note.time)">{{ note.name }}</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="others">
+                <div class="h1">Others</div>
+                <ul class="others-list" id="others">
+                    <li class="other-item" v-for="other in otherList">
+                        <a class="title" v-on:click="navigator(other.title)">{{ other.title }}</a>
+                        :
+                        <p class="decs">{{ other.decs }}</p>
+                    </li>
+
+                </ul>
+            </section>
+        </section>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-left">Just a little worm in the tree</div>
+        <div class="footer-right">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        let type = document.getElementById("typed");
+        let str =   "Some people are always grumbling because roses have thorns; I am thankful that thorns have roses.\n" +
+            "有些人总是抱怨玫瑰有尖刺，我却要感激尖刺上长出了玫瑰。\n" +
+            "---- Alphonse Karr";
+        let i = 0, timer;
+
+        function typing () {
+            if (i <= str.length) {
+                type.innerHTML = str.slice(0, i++);
+                timer = setTimeout('typing()', 80)
+            }
+            else {
+                clearTimeout(timer)
+            }
+        }
+
+
+        document.getElementById("toggle").addEventListener("change",function(){
+            let label = document.querySelector(`[for=${this.id}]`);
+            label.classList.remove("pristine");
+        });
+
+
+        typing();
+
+    </script>
+    <script src="js/Vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
