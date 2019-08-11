@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="fonts/font.css">
 </head>
 <body id="app">
+    <div  id="scroll" class="scroll" onclick="backTop()" style="top:-900px"></div>
     <div class="content" >
         <header class="header">
             <a href="#">
@@ -19,10 +20,11 @@
             </a>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Archives</a></li>
-                    <li><a href="#">about</a></li>
-                    <li style="border: none"><a href="#" >Github</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="others.html">Others</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li style="border: none"><a href="https://github.com/LancelotLake" >Github</a></li>
                 </ul>
             </nav>
         </header>
@@ -42,19 +44,19 @@
             <section class="notes" >
                 <div class="h1">Archives</div>
                 <ul class="notes-list" id="notes">
-                    <li class="note-item" v-for='note in noteList'>
-                        <div class="time">{{ note.time }}</div>
-                        <a v-on:click="navigator(note.name, note.time)">{{ note.name }}</a>
+                    <li class="note-item" v-for='(item, index) in noteList' v-if="index<8">
+                        <div class="time" style="cursor: inherit">{{ item.time }}</div>
+                        <a v-on:click="navigator(item.name, item.time)" >{{ item.name }}</a>
                     </li>
                 </ul>
             </section>
             <section class="others">
                 <div class="h1">Others</div>
                 <ul class="others-list" id="others">
-                    <li class="other-item" v-for="other in otherList">
-                        <a class="title" v-on:click="navigator(other.title)">{{ other.title }}</a>
+                    <li class="other-item" v-for="(item, index) in otherList" v-if="index<7">
+                        <a class="title" v-on:click="navigator(item.title)" >{{ item.title }}</a>
                         :
-                        <p class="decs">{{ other.decs }}</p>
+                        <p class="decs" style="cursor: inherit">{{ item.decs }}</p>
                     </li>
 
                 </ul>
@@ -102,6 +104,8 @@
 
     </script>
     <script src="js/Vue.js"></script>
+    <script src="js/marked.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/scroll.js"></script>
 </body>
 </html>

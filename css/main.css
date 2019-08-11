@@ -15,6 +15,7 @@ body {
     flex-direction: column;
     line-height: 1.725;
     font-family: fontnameRegular;
+    cursor: url("../imgs/cursor.ico"), auto;
     /*font-family: Menlo,"Meslo LG","Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑",monospace;*/
 }
 ul,
@@ -23,8 +24,11 @@ a {
     margin: 0;
     padding: 0;
     text-decoration: none;
-
     list-style: none;
+}
+
+a {
+    cursor: pointer;
 }
 
 .content {
@@ -33,6 +37,17 @@ a {
     flex: 1;
     padding: 0 2rem;
     margin: 4rem auto;
+}
+
+.content .h1 {
+    letter-spacing: .01em;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 700;
+    color: #2bbc8a;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 .header {
@@ -143,4 +158,20 @@ a {
 .footer .footer-right ul li a:hover {
     color: #c9cacc;
     border-bottom: 1px solid #c9cacc;
+}
+
+
+
+
+.scroll {
+    background-image: url("../imgs/backTop.png");
+    cursor: pointer;
+    position: fixed;
+    right: 50px;
+    top: -900px;
+    z-index: 2;
+    width: 70px;
+    height: 900px;
+    transition: all .5s ease-in-out;
+    opacity: 1;
 }
