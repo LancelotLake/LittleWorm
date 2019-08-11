@@ -4,14 +4,33 @@ compiledMarkdown = function (content) {
 
 };
 
-function getParams(key) {
-    let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-    let r = window.location.search.substr(1).match(reg);
-    if (r != null) {
-        return unescape(r[2]);
+
+
+function getUrlVars(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
     }
-    return null;
+    return vars;
 }
+
+function getParams(name) {
+    return decodeURIComponent(getUrlVars()[name]);
+
+}
+
+// function getParams(key) {
+//     let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+//     let r = window.location.search.substr(1).match(reg);
+//     if (r != null) {
+//         return unescape(r[2]);
+//     }
+//     return null;
+// }
 
 function getTxt(str) {
     //1.声明异步请求对象：
@@ -30,6 +49,7 @@ function getTxt(str) {
         xmlHttp.open("get", str, true);
         xmlHttp.send();
         console.log(3);
+        console.log(getParams("decs"));
         xmlHttp.onreadystatechange = doResult; //设置回调函数
     }
 
@@ -95,8 +115,7 @@ let notes = new Vue({
     },
     methods: {
         navigator: function (name, time) {
-            let str = "note.html?" + "name=" + name + "&" + "time=" + time;
-            window.location.href = str;
+            window.location.href = "note.html?" + "name=" + encodeURIComponent(name) + "&" + "time=" + encodeURIComponent(time);
         }
     }
 });
@@ -108,7 +127,7 @@ let others = new Vue({
     data: {
         otherList: [
             {
-                title: "asdAliToSign",
+                title: "file",
                 decs: "基于nodejs的阿里云API签名生成工具"
             },
             {
@@ -127,10 +146,8 @@ let others = new Vue({
         ]
     },
     methods: {
-        navigator: function (name) {
-            let str = "note.html?name=";
-            let url = str + name;
-            window.location.href = url;
+        navigator: function (title, decs) {
+            window.location.href = "other.html?" + "title=" + encodeURIComponent(title) + "&" + "decs=" + encodeURIComponent(decs);
         }
     }
 });
@@ -155,6 +172,33 @@ let article = new Vue({
     mounted() {
         window.addEventListener("load", function () {
             getTxt("file/" + getParams("name") + ".txt");
+        })
+    }
+
+});
+
+let other = new Vue({
+    el: "#other",
+    data: {
+        other:{
+            title:"The end of the world",
+            decs:"66-66-66",
+            content:"# 404 页面错误\n"+
+                ""
+        }
+    },
+    created() {
+        let title = getParams("title");
+        let decs = getParams("decs");
+
+        Vue.set(this.other, "title", title);
+        Vue.set(this.other, "decs", decs);
+
+    },
+    mounted() {
+        window.addEventListener("load", function () {
+            getTxt("file/" + getParams("title") + ".txt");
+
         })
     }
 

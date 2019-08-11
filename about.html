@@ -1,13 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <link rel="stylesheet" href="fonts/font.css">
 </head>
 <body>
+<div  id="scroll" class="scroll" onclick="backTop()" style="top:-900px"></div>
+<div class="content">
+    <header class="header">
+        <a href="#">
+            <div class="logo"></div>
+            <h1>MY muyue</h1>
+        </a>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="others.html">Others</a></li>
+                <li><a href="about.html">about</a></li>
+                <li style="border: none"><a href="https://github.com/LancelotLake" >Github</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <section>
+            <h1>#About me</h1>
+            <div class="info">
+                Hello, world <br>
+                and you guys~<br>
+                Nice to meet you.<br>
+                Haha<br>
+                I'm a little worm in the tree.<br>
+                Welcome to my cabin.
+            </div>
 
+            <img src="imgs/img__02.png" alt="" style="width: 100%; overflow: hidden; margin-top: 3rem;">
+            <div style="margin: 2rem 0.5rem; font-size: 1.2rem; color: #ccffb6">
+                Q：风在吹向哪里？<br>
+                A：风，在吹向明天 &nbsp;&nbsp; (。ゝω・。)☆<br>
+                ----巴哈姆特之怒
+            </div>
+            <h1>联系方式</h1>
+            <div class="info">
+                邮箱：mymuyue@dingtalk.com
+            </div>
+            <h1>关于这个blog</h1>
+            <div style="margin-bottom: 3rem">
+                作为一个 <s>菜鸟</s> 菜虫，充分认识到博客在自我学习中的重要性（其实更多地是羡慕大佬们都有炫酷的博客，自己也想要）<br><br>
+                本来是想写一个springboot的web应用，但时间上有点来不了，用 Hexo 又不甘心<br><br>
+                总之呢，就自己从网上到处借鉴之后写出了这个静态的blog（就是到处抄，别打我）<br><br>
+                虽然不太好用，但自己写的含着泪也得用。<br><br>
+                该blog使用了 Vue.js， markdown转换则借用了 <a href="https://github.com/chjj/marked" style="display: inline;color:#ccffb6">mark.js</a>
+                <br><br>
+                blog实现过程中遇到的问题正在整理ing <br><br><br>
+                <span style="white-space: pre;color: #2bbc8a;font-size: 1.1rem">其他的，就<br>愿于冬日的漫漫长夜中，我们还期许着光明</span>
+                <br><br>
+                <span style="white-space: pre;color: #2bbc8a">$2019.8.11      My Blog Start</span>
+            </div>
+        </section>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-left">Just a little worm in the tree</div>
+    <div class="footer-right">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="others.html">Others</a></li>
+            <li><a href="about.html">about</a></li>
+            <li style="border: none"><a href="https://github.com/LancelotLake" >Github</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/Vue.js"></script>
+<script src="js/marked.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scroll.js"></script>
 </body>
 </html>

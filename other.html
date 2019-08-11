@@ -1,13 +1,51 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="fonts/font.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/note.css">
 </head>
 <body>
+<div class="note-header">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="others.html">Others</a></li>
+        <li><a href="about.html">About</a></li>
+        <li style="border-right: none"><a href="https://github.com/LancelotLake" >Github</a></li>
+    </ul>
+    <div  id="scroll" class="scroll" onclick="backTop()" style="top:-900px">
 
+    </div>
+</div>
+<div class="content">
+    <article class="article" id="other">
+        <div class="title">*# <span v-text="other.title"></span> #*</div>
+        <div class="time" v-text="other.decs" style="border-right: none"></div>
+        <p style="color: #2bbc8a;line-height: 1rem;letter-spacing: 0.1rem;white-space: pre-line">:  @MY.</p>
+        <div class="text" id="text"></div>
+    </article>
+</div>
+<footer class="footer">
+    <div class="footer-left">Just a little worm in the tree</div>
+    <div class="footer-right">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="others.html">Others</a></li>
+            <li><a href="about.html">about</a></li>
+            <li style="border: none"><a href="https://github.com/LancelotLake" >Github</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/Vue.js"></script>
+<script src="js/marked.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scroll.js"></script>
 </body>
 </html>

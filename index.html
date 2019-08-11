@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -42,7 +42,7 @@
                 </div>
             </section>
             <section class="notes" >
-                <div class="h1">Archives</div>
+                <div class="h1">Notes</div>
                 <ul class="notes-list" id="notes">
                     <li class="note-item" v-for='(item, index) in noteList' v-if="index<8">
                         <div class="time" style="cursor: inherit">{{ item.time }}</div>
@@ -54,7 +54,7 @@
                 <div class="h1">Others</div>
                 <ul class="others-list" id="others">
                     <li class="other-item" v-for="(item, index) in otherList" v-if="index<7">
-                        <a class="title" v-on:click="navigator(item.title)" >{{ item.title }}</a>
+                        <a class="title" v-on:click="navigator(item.title, item.decs)" >{{ item.title }}</a>
                         :
                         <p class="decs" style="cursor: inherit">{{ item.decs }}</p>
                     </li>
@@ -68,29 +68,38 @@
         <div class="footer-left">Just a little worm in the tree</div>
         <div class="footer-right">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="others.html">Others</a></li>
+                <li><a href="about.html">about</a></li>
+                <li style="border: none"><a href="https://github.com/LancelotLake" >Github</a></li>
             </ul>
         </div>
     </footer>
 
     <script>
         let type = document.getElementById("typed");
-        let str =   "Some people are always grumbling because roses have thorns; I am thankful that thorns have roses.\n" +
-            "有些人总是抱怨玫瑰有尖刺，我却要感激尖刺上长出了玫瑰。\n" +
-            "---- Alphonse Karr";
         let i = 0, timer;
-
+        let strs = [
+            "我总将自己的烦恼埋藏在心中，以掩饰我的忧虑和敏感。\n伪装出一副天真无邪的模样，逐渐将自己塑造成一个搞笑怪人\n---- 太宰治 《人间失格》",
+            "你不愿意种花，你说，我不愿看见它一点点凋落。\n是的，为了避免结束，你避免了一切开始。\n  ---- 顾城 《避免》",
+            "如果有来生，要做一只鸟，飞越永恒，没有迷途的苦恼。\n东方有火红的希望，南方有温暖的巢床，向西逐退残阳，向北唤醒芬芳。如果有来生，希望每次相遇，都能化为永恒。\n----三毛《说给自己听》",
+            "勇敢是：当你还未开始就已知道自己会输，可你依然要去做，而且无论如何都要把它坚持到底。\n你很少能赢，但有时也会。\n---- 《杀死一只知更鸟》"
+        ];
+        let str = strs[getRandomInt(strs.length)];
         function typing () {
+
             if (i <= str.length) {
                 type.innerHTML = str.slice(0, i++);
-                timer = setTimeout('typing()', 80)
+                timer = setTimeout('typing()', 100)
             }
             else {
                 clearTimeout(timer)
             }
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
         }
 
 

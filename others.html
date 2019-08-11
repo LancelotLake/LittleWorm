@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <link rel="stylesheet" href="fonts/font.css">
+</head>
+<body>
+<div  id="scroll" class="scroll" onclick="backTop()" style="top:-900px"></div>
+<div class="content">
+    <header class="header">
+        <a href="#">
+            <div class="logo"></div>
+            <h1>MY muyue</h1>
+        </a>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="others.html">Others</a></li>
+                <li><a href="about.html">about</a></li>
+                <li style="border: none"><a href="https://github.com/LancelotLake" >Github</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <section>
+            <p class="info">
+                谁终将声震人间，必长久深自缄默。<br>
+                额，好吧，大概是一些日记或者杂记吧。
+            </p>
+            <h1>杂物间</h1>
+            <ul class="others-list" id="others">
+                <li class="other-item" v-for="(item, index) in otherList" v-if="index<7">
+                    <a class="title" v-on:click="navigator(item.title, item.decs)" >{{ item.title }}</a>
+                    :
+                    <p class="decs" style="cursor: inherit">{{ item.decs }}</p>
+                </li>
+
+            </ul>
+        </section>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-left">Just a little worm in the tree</div>
+    <div class="footer-right">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="others.html">Others</a></li>
+            <li><a href="about.html">about</a></li>
+            <li style="border: none"><a href="https://github.com/LancelotLake" >Github</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/Vue.js"></script>
+<script src="js/marked.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scroll.js"></script>
+</body>
+</html>
